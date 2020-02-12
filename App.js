@@ -5,7 +5,20 @@ import TopBar from "./components/TopBar"
 
 class MainView extends Component{
   render(){
-    return(<MainMenu></MainMenu>);
+    //todo style view
+    //todo show topbar?
+    return(
+    <View style={{
+      flex: 1,
+      backgroundColor: '#f5f5f1',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: "100%",
+      height: "100%"
+    }}>
+      <MainMenu style={{height: "90%"}}></MainMenu>
+    </View>
+    );
   }
 }
 
@@ -16,6 +29,6 @@ class MainView extends Component{
 
 export default function App() {
   return (
-    <MainView></MainView>
+    <MainView style={{height: "100%", width: "100%"}}></MainView>
   );
 }

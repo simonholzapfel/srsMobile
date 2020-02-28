@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
-import Card from './Card.js';
+import React from 'react';
+import { StyleSheet, Text} from 'react-native';
 
-export default class Deck extends Component{
-    render(){
-        return(
-            <Text>Deck</Text>
-        );
-    }
+const Deck = props => {
+    return(
+        <Text>Deck</Text>
+    );
 }
+
+const styles = StyleSheet.create({
+
+});
+
+export default Deck;

@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text} from 'react-native';
 
-export default class Settings extends Component{
-    render(){
-        return(
-            <Text>Settings</Text>
-        );
-    }
+const Settings = props => {
+    return(
+        <Text>Settings</Text>
+    );
 }
+
+const styles = StyleSheet.create({
+
+});
+
+export default Settings;

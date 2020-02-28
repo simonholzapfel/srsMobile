@@ -1,10 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
-export default class DeckPreview extends Component{
-    render(){
-        return(
-            <Text>DeckPreview</Text>
-        );
-    }
+const DeckPreview = props => {
+    return (
+        <View style={styles.root}>
+            <Text>DeckPreview {this.props.id}</Text>
+        </View>
+    );
 }
+
+const styles = StyleSheet.create({
+    root: {
+
+    }
+});
+
+export default DeckPreview;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 
-const TopBar = props => {
+const UserProfile = props => {
     return(
-        <Text>TopBarDummy</Text>
+        <Text>UserProfileDummy</Text>
     );
 }
 
@@ -11,4 +11,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default TopBar;
+export default UserProfile;

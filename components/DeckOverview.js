@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text} from 'react-native';
 
-export default class DeckOverview extends Component{
-    render(){
-        return(
-            <Text>DeckOverview</Text>
-        );
-    }
+const DeckOverview = props => {
+    return (
+        <Text>DeckOverview</Text>
+    );
 }
+
+const styles = StyleSheet.create({
+
+});
+
+export default DeckOverview;

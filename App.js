@@ -1,26 +1,19 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
-import MainMenu from "./components/MainMenu";
-import TopBar from "./components/TopBar"
+import React, {useState} from 'react';
+import { StyleSheet, FlatList} from 'react-native';
 
-class MainView extends Component{
-  render(){
-    //todo style view
-    //todo show topbar?
-    return(
-    <View style={{
-      flex: 1,
-      backgroundColor: '#f5f5f1',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: "100%",
-      height: "100%"
-    }}>
-      <MainMenu style={{height: "90%"}}></MainMenu>
-    </View>
-    );
+const styles = StyleSheet.create({
+  rootView: {
+    backgroundColor: '#f5f5f1',
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'stretch'
+  },
+  MainMenu: {
+    flex: 2
+  },
+  TopBar: {
   }
-}
+});
 
 //background #f5f5f1
 //background2 #DBE2E9
@@ -29,6 +22,6 @@ class MainView extends Component{
 
 export default function App() {
   return (
-    <MainView style={{height: "100%", width: "100%"}}></MainView>
+    <FlatList />
   );
 }

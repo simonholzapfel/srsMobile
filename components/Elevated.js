@@ -7,12 +7,12 @@ const Elevated = props => {
 
 const styles = StyleSheet.create({
     card: {
-        shadowColor: 'black',
+        shadowColor: '#465062',
         shadowOffset: {width: 0, height: 2},
         shadowRadius: 6,
         shadowOpacity: 0.26,
         elevation: 8,
-        backgroundColor: 'white',
+        backgroundColor: '#f5f5f1',
         padding: 20,
         borderRadius: 10
     }

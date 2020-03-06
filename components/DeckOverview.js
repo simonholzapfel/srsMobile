@@ -3,16 +3,33 @@ import { StyleSheet, Text, FlatList, ScrollView} from 'react-native';
 import DeckPreview from './DeckPreview';
 
 const DeckOverview = props => {
+    const data = [ // to be replaced with props.elements?
+        {
+            id: "1"
+        },
+        {
+            id: "2"
+        },
+        {
+            id: "3",
+        },
+        {
+            id: "4",
+        }
+    ]
+
     return (
-        <ScrollView style={styles.root}>
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
-        <DeckPreview />
-        </ScrollView>
+        <FlatList style={{...props.style, ...styles.root}}
+        keyExtractor={(item, index) => item.id}
+        data={data}
+        renderItem={itemData => (
+          <DeckPreview
+            id={itemData.item.id}
+            onPress={console.log}
+            style={styles.item}
+          />
+        )}
+      />
     );
 }
 
@@ -20,6 +37,12 @@ const styles = StyleSheet.create({
     root: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+        flex: 1,
+        width: '100%',
+        alignContent: 'flex-start'
+    },
+    item: {
+        
     }
 });
 

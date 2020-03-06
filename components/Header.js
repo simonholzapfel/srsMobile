@@ -1,7 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet} from 'react-native';
+import Search from '../screens/Search';
+import Settings from '../screens/Settings';
 
 const Header = props => {
+    //todo:
+    // * implement Search
+    // * implement Settings
+
     return(
         <View style={styles.header}>
             <Text style={styles.headerTitle}>{props.title}</Text>

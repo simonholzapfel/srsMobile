@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text} from 'react-native';
 
-export default class Card extends Component{
-    render(){
-        return(
-            <Text>Card here</Text>
-        );
-    }
+const Card = props => {
+    return(
+        <Text>CardDummy</Text>
+    );
 }
+
+const styles = StyleSheet.create({
+
+});
+
+export default Card;

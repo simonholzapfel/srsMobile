@@ -6,21 +6,26 @@ const DeckPreview = props => {
 
     }else{
 
-    } */
+    } 
+    
+    <Image style={styles.image} source={require('../assets/defaultDeckThumb.png')}></Image>
+    */
 
     return (
-        <TouchableOpacity style={{...props.style, ...styles.root}} onPress={props.onPress.bind(this, props.id)}>
-            <Image style={styles.image} source={require('../assets/defaultDeckThumb.png')}></Image>
+        <TouchableOpacity onPress={props.onPress.bind(this, props.id)}>
+            <View style={{...props.style, ...styles.debugView}}/>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-    root: {
-        
-    },
     image: {
-        resizeMode: 'stretch'
+       
+    },
+    debugView:{
+        backgroundColor: 'red',
+        borderColor: 'black',
+        borderRadius: 40,
     }
 });
 

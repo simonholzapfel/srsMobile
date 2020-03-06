@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, FlatList, ScrollView} from 'react-native';
+import { StyleSheet, Text, FlatList, ScrollView, SafeAreaView, List, View} from 'react-native';
 import DeckPreview from './DeckPreview';
 
 const DeckOverview = props => {
@@ -20,15 +20,15 @@ const DeckOverview = props => {
 
     return (
         <FlatList style={{...props.style, ...styles.root}}
-        keyExtractor={(item, index) => item.id}
-        data={data}
-        renderItem={itemData => (
-          <DeckPreview
-            id={itemData.item.id}
-            onPress={console.log}
-            style={styles.item}
-          />
-        )}
+                keyExtractor={(item, index) => item.id}
+                data={data}
+                renderItem={itemData => 
+            <DeckPreview
+                id={itemData.item.id}
+                onPress={console.log}
+                style={styles.item}
+            />
+        }
       />
     );
 }
@@ -37,12 +37,11 @@ const styles = StyleSheet.create({
     root: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        flex: 1,
-        width: '100%',
-        alignContent: 'flex-start'
     },
     item: {
-        
+        height: 100,
+        width: 75,
+        padding: 5,
     }
 });
 

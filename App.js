@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   continueDeck:{
-    width: '90%',
+    width: '95%',
     height: '20%',
     backgroundColor: '#26d07c',
     padding: 5,

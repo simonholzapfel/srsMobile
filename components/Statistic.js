@@ -1,17 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text} from 'react-native';
-
-export default class Statistic extends Component{
-    render(){
-        
-    }
-}
+import {LineChart} from 'react-native-chart-kit';
 
 const Statistic = props => {
     return(
-        <Text>Statistic: {props.source}</Text>
+        <Text>{props.data}</Text>
 )};
 
 const styles = StyleSheet.create({
 
 });
+
+export default Statistic;

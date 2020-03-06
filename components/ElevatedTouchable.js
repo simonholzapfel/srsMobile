@@ -15,3 +15,5 @@ const ElevatedTouchable = props =>{
         </TouchableHighlight>
     );
 }
+
+export default ElevatedTouchable;

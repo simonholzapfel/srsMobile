@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-const ElevatedComponent = props => {
+const Elevated = props => {
     return <View style={{...styles.card, ...props.style}}>{props.children}</View>
 }
 
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ElevatedComponent;
+export default Elevated;

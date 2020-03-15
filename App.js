@@ -14,15 +14,15 @@ const App = () => {
   // * perMissionsOk
   // * Login
   // * Storage
-  let perMissionsOk = false;
+  let storageAccess = false;
   let loggedIn = true;
-  var content = <MainMenu style={styles.screen}/>;
+  var content = <MainMenu/>;
 
-  if(perMissionsOk){
+  if(storageAccess){
 
   }
-  else if(!loggedIn){
-    content = <Login style={styles.screen}/>;
+  if(!loggedIn){
+    content = <Login/>;
   }
 
   return (

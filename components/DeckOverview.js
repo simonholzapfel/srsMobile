@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, FlatList, ScrollView, SafeAreaView, List, View} from 'react-native';
+import { StyleSheet, FlatList} from 'react-native';
 import DeckPreview from './DeckPreview';
 
 const DeckOverview = props => {
-    const data = [ //development
+    const data = [
         {
-            id: "1"
+            id: "1",
         },
         {
             id: "2"
@@ -52,8 +52,7 @@ const DeckOverview = props => {
         return <DeckPreview
         id={itemData.item.id}
         style={styles.item}
-        navigation={props.navigation}
-    />
+        navigation={props.navigation}/>
     }
 
     return (
@@ -73,8 +72,9 @@ const styles = StyleSheet.create({
         alignContent: "flex-start"
     },
     item: {
-        height: 100,
-        width: 75,
+        height: 150,
+        width: 90,
+        margin: 4,
     }
 });
 

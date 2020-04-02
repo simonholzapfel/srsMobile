@@ -1,7 +1,10 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TouchableHighlight, TouchableOpacity} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 const DeckPreview = props => {
+    let finStyle = {...styles.View, ...props.style}
+    finStyle.width = finStyle.height*0.6
+
     return (
         <TouchableOpacity onPress={() => {props.navigation.navigate({
             routeName: 'Deck',
@@ -9,7 +12,7 @@ const DeckPreview = props => {
                 deckId: props.id
             }
         })}}>
-            <View style={{...props.style, ...styles.debugView}}>
+            <View style={finStyle}>
                 <Text>Id is {props.id}</Text>
             </View>
         </TouchableOpacity>
@@ -17,13 +20,10 @@ const DeckPreview = props => {
 }
 
 const styles = StyleSheet.create({
-    debugView:{
+    View:{
         backgroundColor: 'red',
         borderColor: 'black',
-        borderRadius: 25,
-        height :150,
-        width: 90,
-        margin: 7,
+        borderRadius: 15,
         alignItems:"center"
     }
 });

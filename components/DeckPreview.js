@@ -2,30 +2,29 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableHighlight, TouchableOpacity} from 'react-native';
 
 const DeckPreview = props => {
-    /*if(typeof props.deck.thumbnail === 'undefined'){
-
-    }else{
-
-    } 
-    
-    <Image style={styles.image} source={require('../assets/defaultDeckThumb.png')}></Image>
-    */
-
     return (
-        <TouchableOpacity onPress={props.onPress.bind(this, props.id)}>
-            <View style={{...props.style, ...styles.debugView}}/>
+        <TouchableOpacity onPress={() => {props.navigation.navigate({
+            routeName: 'Deck',
+            params: {
+                deckId: props.id
+            }
+        })}}>
+            <View style={{...props.style, ...styles.debugView}}>
+                <Text>Id is {props.id}</Text>
+            </View>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-    image: {
-       
-    },
     debugView:{
         backgroundColor: 'red',
         borderColor: 'black',
-        borderRadius: 40,
+        borderRadius: 25,
+        height :150,
+        width: 90,
+        margin: 7,
+        alignItems:"center"
     }
 });
 

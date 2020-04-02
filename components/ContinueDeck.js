@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
+import Colors from '../constants/Colors'
+
+//todo: 
+// * android no top margin ("connect" with header)
+// * ios as bubble (current state)
 
 const ContinueDeck = props => {
     return(
@@ -10,8 +15,13 @@ const ContinueDeck = props => {
 }
 
 const styles = StyleSheet.create({
-    root: {
-
+    root:{
+        alignItems: "center",
+        marginTop: 10,
+        width: '95%',
+        height: '20%',
+        backgroundColor: Colors.primary,
+        borderRadius: 15
     }
 });
 

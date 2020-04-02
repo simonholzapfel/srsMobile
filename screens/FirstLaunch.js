@@ -7,7 +7,7 @@ const FirstLaunch = props => {
 
 const styles = StyleSheet.create({
     root:{
-        
+        flex:1,
     }
 });
 

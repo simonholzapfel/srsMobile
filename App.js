@@ -1,45 +1,31 @@
 import React, {useState} from 'react';
-import { StyleSheet, FlatList, ScrollView, View, Text} from 'react-native';
-import Header from './components/Header'
+import {  } from 'react-native';
+import {AppLoading} from 'expo';
+import MainNavigator from './navigations/MainNavigator';
 import Login from './screens/Login';
-import MainMenu from './screens/MainMenu';
-
-//background #f5f5f1
-//background2 #DBE2E9
-//dark #465062
-//green #26d07c
+import FirstLaunch from './screens/FirstLaunch';
 
 const App = () => {
-  //todo:
-  // * perMissionsOk
-  // * Login
-  // * Storage
-  let storageAccess = false;
-  let loggedIn = true;
-  var content = <MainMenu/>;
+  const [firstLaunch, setFirstLaunch] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
+  const [appLoaded, setAppLoaded] = useState(false);
 
-  if(storageAccess){
+  const loadAppResources = () => {
+    //todo also check for permissions
+    console.log("Loading app resources!")
+  };
 
+  if(!appLoaded){
+    return <AppLoading startAsync={loadAppResources} onFinish={() => setAppLoaded(true)}/>
+  }
+  if(firstLaunch){
+    return <FirstLaunch onFinish={() => setFirstLaunch(false)}/>;
   }
   if(!loggedIn){
-    content = <Login/>;
+    return <Login onFinish={() => setLoggedIn(true)}/>;
   }
 
-  return (
-    <View style={styles.screen}>
-      <Header title="SRS"/>
-      {content}
-    </View>
-  );
+  return <MainNavigator/>;
 }
-
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: '#f5f5f1',
-    width: '100%',
-    flex: 1,
-    alignItems: 'center',
-  }
-});
 
 export default App;

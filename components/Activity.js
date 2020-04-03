@@ -1,11 +1,19 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableHighlight} from 'react-native';
 import Colors from '../constants/Colors'
+import SwipeableViews from 'react-swipeable-views-native/lib/SwipeableViews.scroll';
 
 const Activity = props => {
     return(
         <View style={{...props.style, ...styles.root}}>
-            <Text>User Activity and Statistics can be found here</Text>
+            <SwipeableViews style={styles.swipeable} onChangeIndex={(now, before) => {}} >
+                <View>
+                    <Text>my Activity</Text>
+                </View>
+                <View>
+                    <Text>friends activity</Text>
+                </View>
+            </SwipeableViews>
         </View>
     )
 }
@@ -18,6 +26,14 @@ const styles = StyleSheet.create({
         height: '20%',
         backgroundColor: Colors.primary,
         borderRadius: 12
+    },
+    swipeable: {
+        flex:1
+    },
+    swipeableView:{
+        height: 80,
+        width: '80%',
+        backgroundColor: Colors.background2
     }
 });
 

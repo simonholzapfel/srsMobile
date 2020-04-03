@@ -14,7 +14,7 @@ export default class Logic{
 
     }
 
-    static fetchAll(){
+    static fetch(){
         
     }
 }

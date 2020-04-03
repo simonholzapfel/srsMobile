@@ -17,8 +17,6 @@ const Deck = props => {
     return <View style={{...styles.root, ...props.style}}><Text>Deck id: {id}</Text></View>
 };
 
-
-
 const styles = StyleSheet.create({
     root:{
         flex: 1

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList} from 'react-native';
+import { StyleSheet, FlatList, Dimensions} from 'react-native';
 import DeckPreview from './DeckPreview';
 
 const DeckOverview = props => {
@@ -68,13 +68,12 @@ const styles = StyleSheet.create({
     root: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        margin: 10,
+        marginTop: 2,
         alignContent: "flex-start"
     },
     item: {
-        height: 150,
-        width: 90,
-        margin: 4,
+        width: Dimensions.get('window').height/6.8,
+        margin: Dimensions.get('window').height/270,
     }
 });
 

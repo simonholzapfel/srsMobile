@@ -3,15 +3,13 @@ import {StyleSheet, View, Text} from 'react-native';
 import Colors from '../constants/Colors'
 import DeckPreview from './DeckPreview';
 
-//todo: 
-// * android no top margin ("connect" with header)
-// * ios as bubble (current state)
-
 const ContinueDeck = props => {
     return(
         <View style={{...props.style, ...styles.root}}>
             <DeckPreview id={props.id} navigation={props.navigation} style={styles.preview}/>
-            <Text>Continue/Repeat Last used Deck</Text>
+            <View>
+                <Text>Continue last deck</Text>
+            </View>
         </View>
     )
 }
@@ -28,8 +26,8 @@ const styles = StyleSheet.create({
     },
     preview: {
         height: 120,
-        width: 72,
-        borderRadius: 12
+        borderRadius: 12,
+        marginRight: 4,
     }
 });
 

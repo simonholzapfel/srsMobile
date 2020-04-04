@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
         alignContent: "flex-start"
     },
     item: {
-        width: Dimensions.get('window').height/6.8,
-        margin: Dimensions.get('window').height/270,
+        width: Dimensions.get('window').width/4.5,
+        margin: Dimensions.get('window').width/100,
     }
 });
 

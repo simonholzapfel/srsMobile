@@ -6,14 +6,7 @@ import SwipeableViews from 'react-swipeable-views-native/lib/SwipeableViews.scro
 const Activity = props => {
     return(
         <View style={{...props.style, ...styles.root}}>
-            <SwipeableViews style={styles.swipeable} onChangeIndex={(now, before) => {}} >
-                <View>
-                    <Text>my Activity</Text>
-                </View>
-                <View>
-                    <Text>friends activity</Text>
-                </View>
-            </SwipeableViews>
+            <Text>Activity</Text>
         </View>
     )
 }

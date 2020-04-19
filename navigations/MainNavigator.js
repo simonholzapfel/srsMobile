@@ -5,6 +5,7 @@ import Search from '../screens/Search';
 import Settings from '../screens/Settings';
 import UserProfile from '../screens/UserProfile';
 import Deck from '../screens/Deck'; 
+import Colors from '../constants/Colors';
 
 const MainNavigator = createStackNavigator({
     MainMenu: MainMenu,
@@ -12,6 +13,17 @@ const MainNavigator = createStackNavigator({
     Search:Search,
     UserProfile: UserProfile,
     Deck: Deck,
-});
+},
+{
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : ''
+      },
+      headerTintColor:
+        Platform.OS === 'android' ? 'white' : Colors.primary,
+      headerTitle: 'SRS'
+    }
+  }
+);
 
-export default createAppContainer(MainNavigator); //use this function only for root navigator
+export default createAppContainer(MainNavigator);

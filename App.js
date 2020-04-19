@@ -1,10 +1,23 @@
 import React, {useState} from 'react';
 import {  } from 'react-native';
 import {AppLoading} from 'expo';
-import Logic from './logic/Logic';
 import MainNavigator from './navigations/MainNavigator';
 import Login from './screens/Login';
 import FirstLaunch from './screens/FirstLaunch';
+import {enableScreens} from 'react-native-screens';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+
+import deckReducer from './store/reducers/decks';
+import userReducer from './store/reducers/users';
+
+enableScreens(); //for increased performance
+
+const rootReducer = combineReducers({
+  decks: deckReducer,
+  users: userReducer,
+})
+const store = createStore(rootReducer);
 
 const App = () => {
   const [firstLaunch, setFirstLaunch] = useState(false);
@@ -12,11 +25,6 @@ const App = () => {
   const [appLoaded, setAppLoaded] = useState(false);
 
   const loadAppResources = () => {
-    //todo also check for permissions
-    //apploaded?
-    //first launch?
-    //logged in?
-    Logic.fetch();
     console.log("Loading app resources!")
   };
 
@@ -30,7 +38,7 @@ const App = () => {
     return <Login onFinish={() => setLoggedIn(true)}/>;
   }
 
-  return <MainNavigator/>;
+  return <Provider store={store}><MainNavigator/></Provider>;
 }
 
 export default App;

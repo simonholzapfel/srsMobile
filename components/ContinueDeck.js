@@ -3,10 +3,20 @@ import {StyleSheet, View, Text} from 'react-native';
 import Colors from '../constants/Colors'
 import DeckPreview from './DeckPreview';
 
+const getLastUsedDeckInformation = () => { //todo implement
+    return {
+        id: 1,
+        name:"How to SRS",
+    }
+}
+
+
 const ContinueDeck = props => {
+    const info = getLastUsedDeckInformation();
+
     return(
         <View style={{...props.style, ...styles.root}}>
-            <DeckPreview id={props.id} navigation={props.navigation} style={styles.preview}/>
+            <DeckPreview id={info.id} name={info.name} navigation={props.navigation} style={styles.preview}/>
             <View>
                 <Text>Continue last deck</Text>
             </View>

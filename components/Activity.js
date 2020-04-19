@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, TouchableHighlight} from 'react-native';
+import {StyleSheet, View, Text, TouchableHighlight, ART, Dimensions} from 'react-native';
 import Colors from '../constants/Colors'
 import SwipeableViews from 'react-swipeable-views-native/lib/SwipeableViews.scroll';
 
 const Activity = props => {
     return(
         <View style={{...props.style, ...styles.root}}>
-            <Text>Activity</Text>
+            
         </View>
     )
 }

@@ -9,31 +9,36 @@ import HeaderButton from '../components/HeaderButton';
 
 const MainMenu = props => {
   //todo removed activity for now
+  return (
+    <View style={styles.root}>
+      <ContinueDeck navigation={props.navigation}/>
+      <DeckOverview style={styles.deckOverview} navigation={props.navigation}/>
+    </View>
+  );
+}
 
-    MainMenu.navigationOptions = {
-      headerRight: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item 
-          title="Search"
-          iconName="md-search"
-          onPress={() => {
-            props.navigation.navigate('Search');
-          }}
-          />
-          <Item
-          title="Profile"
-          iconName="md-person"
-          onPress={() => {
-            props.navigation.push('UserProfile')
-          }}
-          />
-    </HeaderButtons>}
 
-    return (
-        <View style={styles.root}>
-          <ContinueDeck navigation={props.navigation}/>
-          <DeckOverview style={styles.deckOverview} navigation={props.navigation}/>
-        </View>
-      );
+MainMenu.navigationOptions = props => {
+  return {
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+  <Item 
+    title="Search"
+    iconName="md-search"
+    onPress={() => {
+      props.navigation.navigate('Search');
+    }}
+    />
+    <Item
+    title="Profile"
+    iconName="md-person"
+    onPress={() => {
+      props.navigation.push('UserProfile')
+    }}
+    />
+      </HeaderButtons>
+    )
+  }
 }
 
 const styles = StyleSheet.create({

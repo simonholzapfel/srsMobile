@@ -4,11 +4,11 @@ import {useSelector} from 'react-redux';
 import HeaderButton from '../components/HeaderButton';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 
-//if no uid in props => my profile
+//if no uid in nav params => my profile
 const UserProfile = props => {
     UserProfile.navigationOptions =  {
         headerRight: () => {
-            if(!props.navigation.getParam('id'))
+            if(props.navigation.getParam('id') == undefined)
             return <HeaderButtons HeaderButtonComponent={HeaderButton}>
                 <Item 
                 title="Search"

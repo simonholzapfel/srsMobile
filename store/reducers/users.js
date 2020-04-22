@@ -2,7 +2,8 @@ import {users}from '../../data/dummy';
 
 const initalState = {
     allUsers: users,
-    following: []
+    following: [],
+    myUser: {},
 }
 
 export default (state = initalState, action) => {

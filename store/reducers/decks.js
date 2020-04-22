@@ -1,7 +1,8 @@
-import {decks}from '../../data/dummy';
+import {decks} from '../../data/dummy';
 
 const initalState = {
     myDecks: decks,
+    decks: decks,
 }
 
 export default (state = initalState, action) => {

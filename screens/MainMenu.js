@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import { StyleSheet, View, Dimensions} from 'react-native';
 import ContinueDeck from '../components/ContinueDeck';
 import DeckOverview from '../components/DeckOverview';
@@ -8,8 +8,10 @@ import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import HeaderButton from '../components/HeaderButton';
 
 const MainMenu = props => {
-  MainMenu.navigationOptions = {
-    headerRight: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
+  //todo removed activity for now
+
+    MainMenu.navigationOptions = {
+      headerRight: () => <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item 
           title="Search"
           iconName="md-search"
@@ -24,9 +26,8 @@ const MainMenu = props => {
             props.navigation.push('UserProfile')
           }}
           />
-    </HeaderButtons>
-  }
-  //todo removed activity for now
+    </HeaderButtons>}
+
     return (
         <View style={styles.root}>
           <ContinueDeck navigation={props.navigation}/>

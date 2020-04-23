@@ -2,7 +2,7 @@ import {users}from '../../data/dummy';
 
 const initalState = {
     allUsers: users,
-    following: [],
+    following: [users[1], users[2]],
     myUser: {},
 }
 

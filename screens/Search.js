@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, View, TextInput, FlatList} from 'react-native';
+import {StyleSheet, View, TextInput, FlatList} from 'react-native';
 import {useSelector} from 'react-redux';
+import DeckListItem from '../components/DeckListItem';
+import UserListItem from '../components/UserListItem';
 
 const Search = props => {
     const [inputText, setInputText] = useState("");
@@ -11,18 +13,20 @@ const Search = props => {
 
     //debug
     // /api/v1/decks?search=keyword1+keyword2&sort=new&page=1
-    var decks = useSelector(state => state.decks.decks).filter(deck => {
-        return deck.name.toLowerCase().includes(inputText.toLowerCase());
-    });
+    const user = useSelector(state => state.users.allUsers).find(user => user.name.toLowerCase()+"-"+user.slug.toLowerCase() === inputText.toLowerCase());
+    const decks = useSelector(state => state.decks.allDecks).filter(deck => deck.name.toLowerCase().includes(inputText));
+    const response = {user, decks};
 
-    console.log(decks);
+    console.log(response);
 
     return (
         <View style={{...styles.root, ...props.style}}>
-            <UserResult/>
+            <UserResult userInfo={response.user}/>
             <FlatList
-                data={decks}
-                renderItem={renderListElement}
+                data={response.decks}
+                renderItem={data => {
+                    return <DeckListItem deck={data.item}/>
+                }}
             />
         </View>
     );
@@ -45,11 +49,8 @@ const styles = StyleSheet.create({
 
 export default Search;
 
-const renderListElement = item => {
-    return <Text>{item.name}</Text>
-}
-
-const UserResult = props => {
-    // if textInput === uname-slug
-    return <Text> test </Text>
+export const UserResult = props => {
+    if(props.userInfo != undefined)
+    return <UserListItem onPress={props.onPress} userInfo={props.userInfo}/>;
+    return <View></View>;
 }

@@ -6,31 +6,39 @@ import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 
 //if no uid in nav params => my profile
 const UserProfile = props => {
-    UserProfile.navigationOptions =  {
-        headerRight: () => {
-            if(props.navigation.getParam('id') == undefined)
-            return <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                <Item 
-                title="Search"
-                iconName="md-settings"
-                onPress={() => {
-                  props.navigation.navigate('Settings');
-                }}
-                />
-            </HeaderButtons>
+    let user;
+
+    if(props.navigation.getParam('id') == undefined){
+        UserProfile.navigationOptions =  {
+            headerRight: () => {
+                return <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                    <Item 
+                    title="Search"
+                    iconName="md-settings"
+                    onPress={() => {
+                      props.navigation.navigate('Settings');
+                    }}
+                    />
+                </HeaderButtons>;
+            }
         }
+
+        user = useSelector(state => state.users.myUser);
+    }
+    else{
+        user = useSelector(state => state.users).find(user => user.id === props.navigation.getParam('id')); // todo maybe change //if user not in repo...
     }
 
     return(
         <View style={styles.view}>
-            <Text>Pls implement me, my name is UserProfile</Text>
+            <Text>{user.name}</Text>
+            <Text>{user.slug}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     view: {
-        backgroundColor: 'red',
         flex:1
     }
 });

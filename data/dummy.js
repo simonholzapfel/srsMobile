@@ -15,7 +15,7 @@ export const users = [
     {
         id: "1",
         name: "Simon",
-        slug: "4565"
+        slug: "1234"
     },
     {
         id: "2",

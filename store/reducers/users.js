@@ -3,7 +3,7 @@ import {users}from '../../data/dummy';
 const initalState = {
     allUsers: users,
     following: [users[1], users[2]],
-    myUser: {},
+    myUser: users[0],
 }
 
 export default (state = initalState, action) => {

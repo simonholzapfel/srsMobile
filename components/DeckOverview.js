@@ -12,7 +12,13 @@ const DeckOverview = props => {
         id={itemData.item.id}
         name={itemData.item.name}
         style={styles.item}
-        navigation={props.navigation}/>
+        onPress={() => {props.navigation.navigate({
+            routeName: 'Deck',
+            params: {
+                deckId: itemData.item.id,
+                deckName: itemData.item.name,
+            }
+        })}}/>
     }
 
     return (

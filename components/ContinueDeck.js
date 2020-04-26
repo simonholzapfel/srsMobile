@@ -16,7 +16,13 @@ const ContinueDeck = props => {
 
     return(
         <View style={{...props.style, ...styles.root}}>
-            <DeckPreview id={info.id} name={info.name} navigation={props.navigation} style={styles.preview}/>
+            <DeckPreview id={info.id} name={info.name} style={styles.preview} onPress={() => {props.navigation.navigate({
+            routeName: 'Deck',
+            params: {
+                deckId: info.id,
+                deckName: info.name,
+            }
+        })}}/>
             <View>
                 <Text>Continue last deck</Text>
             </View>

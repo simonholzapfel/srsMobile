@@ -6,6 +6,7 @@ import Settings from '../screens/Settings';
 import UserProfile from '../screens/UserProfile';
 import Deck from '../screens/Deck'; 
 import Colors from '../constants/Colors';
+import DeckPlayer from '../screens/DeckPlayer';
 
 const MainNavigator = createStackNavigator({
     MainMenu: MainMenu,
@@ -13,6 +14,7 @@ const MainNavigator = createStackNavigator({
     Search:Search,
     UserProfile: UserProfile,
     Deck: Deck,
+    DeckPlayer: DeckPlayer,
 },
 {
     defaultNavigationOptions: {

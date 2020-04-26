@@ -13,13 +13,7 @@ const DeckPreview = props => {
     }
 
     return (
-        <TouchableOpacity onPress={() => {props.navigation.navigate({
-            routeName: 'Deck',
-            params: {
-                deckId: props.id,
-                deckName: props.name
-            }
-        })}}>
+        <TouchableOpacity onPress={props.onPress}>
             <View style={finStyle}>
                 <Text>Id is {props.id}</Text>
             </View>

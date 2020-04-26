@@ -17,29 +17,24 @@ const MainMenu = props => {
   );
 }
 
-
-MainMenu.navigationOptions = props => {
-  return {
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={HeaderButton}>
-  <Item 
-    title="Search"
-    iconName="md-search"
-    onPress={() => {
-      props.navigation.navigate('Search');
-    }}
-    />
-    <Item
-    title="Profile"
-    iconName="md-person"
-    onPress={() => {
-      props.navigation.push('UserProfile')
-    }}
-    />
-      </HeaderButtons>
-    )
-  }
-}
+MainMenu.navigationOptions = ({navigation}) =>  ({
+  headerRight: () => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+    <Item 
+      title="Search"
+      iconName="md-search"
+      onPress={() => {
+        navigation.navigate('Search');
+      }}
+      />
+      <Item
+      title="Profile"
+      iconName="md-person"
+      onPress={() => {
+        navigation.push('UserProfile');
+      }}
+      />
+        </HeaderButtons>)
+});
 
 const styles = StyleSheet.create({
       deckOverview:{

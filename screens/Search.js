@@ -10,14 +10,11 @@ const Search = props => {
         props.navigation.setParams({ setInputText: setInputText });
       }, [setInputText]);
 
-
     //debug
     // /api/v1/decks?search=keyword1+keyword2&sort=new&page=1
     const user = useSelector(state => state.users.allUsers).find(user => user.name.toLowerCase()+"-"+user.slug.toLowerCase() === inputText.toLowerCase());
     const decks = useSelector(state => state.decks.allDecks).filter(deck => deck.name.toLowerCase().includes(inputText));
     const response = {user, decks};
-
-    console.log(response);
 
     return (
         <View style={{...styles.root, ...props.style}}>
@@ -32,11 +29,9 @@ const Search = props => {
     );
 };
 
-Search.navigationOptions = ({navigation}) => {
-    return {
-        headerTitle: <TextInput style={styles.input} onChangeText={navigation.getParam('setInputText')} autoCorrect={false} returnKeyType={"search"} placeholder={"Search"} maxLength={40} autoFocus/>
-    }
-}
+Search.navigationOptions = ({navigation}) => ({
+        headerTitle: () => <TextInput style={styles.input} onChangeText={navigation.getParam('setInputText')} autoCorrect={false} returnKeyType={"search"} placeholder={"Search"} maxLength={40} autoFocus/>
+})
 
 const styles = StyleSheet.create({
     root:{

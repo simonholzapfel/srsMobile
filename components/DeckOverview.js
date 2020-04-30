@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, FlatList, Dimensions} from 'react-native';
+import { StyleSheet, FlatList, Dimensions, View, Text} from 'react-native';
 import DeckPreview from './DeckPreview';
 import {useSelector} from 'react-redux';
 
 const DeckOverview = props => {
 
     const decks = useSelector(state => state.decks.myDecks);
+
+    if(decks.length < 1)
+    return (<View><Text>Try searching for some decks!</Text></View>)
 
     const renderGridItem = itemData =>{
         return <DeckPreview
@@ -35,7 +38,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: 2,
-        alignContent: "flex-start"
+        alignContent: "flex-start",
     },
     item: {
         width: Dimensions.get('window').width/4.5,

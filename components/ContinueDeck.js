@@ -1,18 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import Colors from '../constants/Colors'
 import DeckPreview from './DeckPreview';
-
-const getLastUsedDeckInformation = () => { //todo implement
-    return {
-        id: 1,
-        name:"How to SRS",
-    }
-}
-
+import {useSelector} from 'react-redux';
 
 const ContinueDeck = props => {
-    const info = getLastUsedDeckInformation();
+    const info = useSelector(state => state.decks.lastUsed);
+
+    if(info == undefined)
+    return <View></View>
 
     return(
         <View style={{...props.style, ...styles.root}}>
@@ -27,7 +23,7 @@ const ContinueDeck = props => {
                 <Text>Continue last deck</Text>
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({

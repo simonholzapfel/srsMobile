@@ -15,16 +15,16 @@ export const users = [
     {
         id: "1",
         name: "Simon",
-        slug: "1234"
+        discriminator: "1234"
     },
     {
         id: "2",
         name: "Emil",
-        slug: "6541"
+        discriminator: "6541"
     },
     {
         id: "3",
         name: "Paul",
-        slug: "7842"
+        discriminator: "7842"
     },
 ]

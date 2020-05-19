@@ -39,10 +39,8 @@ const StartupScreen = props => {
                 dispatch(authActions.authenticate(localData.token, data.user.username, data.user.discriminator, localData.email))
                 return;
             }
-            else{
-                props.navigation.navigate('Login')
-                return;
-            }
+            props.navigation.navigate('Login')
+            return;
         }
 
         startupTask();

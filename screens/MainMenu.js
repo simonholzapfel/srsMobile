@@ -1,14 +1,12 @@
-import React, {useState, useCallback, useEffect} from 'react';
+import React, {} from 'react';
 import { StyleSheet, View, Dimensions} from 'react-native';
 import ContinueDeck from '../components/ContinueDeck';
 import DeckOverview from '../components/DeckOverview';
-import Colors from "../constants/Colors";
-import Activity from "../components/Activity";
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import HeaderButton from '../components/HeaderButton';
 
 const MainMenu = props => {
-  //todo removed activity for now
+  //todo add activity
   return (
     <View style={styles.root}>
       <ContinueDeck navigation={props.navigation}/>
@@ -17,23 +15,25 @@ const MainMenu = props => {
   );
 }
 
-MainMenu.navigationOptions = ({navigation}) =>  ({
-  headerRight: () => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+MainMenu.navigationOptions = ({navigation}) => ({
+  headerRight: () => (
+  <HeaderButtons HeaderButtonComponent={HeaderButton}>
     <Item 
       title="Search"
       iconName="md-search"
       onPress={() => {
         navigation.navigate('Search');
       }}
-      />
-      <Item
+    />
+    <Item
       title="Profile"
       iconName="md-person"
       onPress={() => {
         navigation.push('UserProfile');
       }}
-      />
-        </HeaderButtons>)
+    />
+  </HeaderButtons>
+  )
 });
 
 const styles = StyleSheet.create({

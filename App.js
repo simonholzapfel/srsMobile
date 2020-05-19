@@ -21,6 +21,8 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const App = () => {
+  console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+
   return <Provider store={store}><MainNavigator/></Provider>;
 }
 

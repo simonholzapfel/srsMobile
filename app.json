@@ -27,6 +27,7 @@
     "android": {
       "package": "com.srs.srs",
       "versionCode": 1
-    }
+    },
+    "sdkVersion": "37.0.0"
   }
 }

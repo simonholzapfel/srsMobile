@@ -28,3 +28,41 @@ export const users = [
         discriminator: "7842"
     },
 ]
+
+const tinfDeck = {
+    name: "Computer Hardware",
+    thumbnail: require("../assets/nzxt.jpg"),
+    cards: [
+        {
+            front: [
+                {
+                    type: "text",
+                    style: {
+
+                    },
+                    text: "What is this component called?"
+                },
+                {
+                    type: "image",
+                    style: {
+
+                    },
+                    image: require("../assets/psu.jpg")
+                }
+            ],
+            back: [
+                {
+                    type: "text",
+                    style: {
+
+                    },
+                    text: "This is the Power Supply, also called PSU."
+                }
+            ]
+        },
+    ]
+}
+
+export const demoDecks = [
+    tinfDeck,
+]

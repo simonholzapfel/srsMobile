@@ -9,6 +9,7 @@ import deckReducer from './store/reducers/decks';
 import userReducer from './store/reducers/users';
 import authReducer from './store/reducers/auth';
 import MainNavigator from './navigations/MainNavigator';
+import DemoNavigator from './navigations/DemoNavigator';
 
 enableScreens();
 
@@ -23,7 +24,7 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 const App = () => {
   console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------");
 
-  return <Provider store={store}><MainNavigator/></Provider>;
+  return <Provider store={store}><DemoNavigator/></Provider>;
 }
 
 export default App;

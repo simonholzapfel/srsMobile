@@ -10,7 +10,6 @@ import DeckPlayer from '../screens/DeckPlayer';
 import Login from '../screens/Login';
 import FirstLaunch from '../screens/FirstLaunch';
 import StartupScreen from '../screens/StartupScreen';
-import DemoSceen from '../screens/DemoScreen'
 
 const srsNavigator = createStackNavigator({
     MainMenu: MainMenu,
@@ -45,7 +44,6 @@ const AuthNavigator = createStackNavigator({
 });
 
 const IntroNavigator = createStackNavigator({
-  Demo: DemoSceen,
   StartupScreen: StartupScreen,
   FirstLaunch: FirstLaunch
 },{

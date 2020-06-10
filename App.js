@@ -23,8 +23,9 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const App = () => {
   console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------");
-
-  return <Provider store={store}><DemoNavigator/></Provider>;
+  
+  return <DemoNavigator />
+  return <Provider store={store}><MainNavigator/></Provider>;
 }
 
 export default App;

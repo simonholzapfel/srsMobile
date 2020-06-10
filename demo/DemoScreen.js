@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, Button, } from 'react-native';
+import Card from '../components/Card'
+import {demoDecks} from '../data/dummy';
+import DemoDeckOverview from './DemoDeckOverview';
+
 const DemoScreen = props => {
     return (
         <View style={{ ...styles.root, ...props.style }}>
-            <Button onPress={ () =>
-                props.navigation.navigate('Demo')} title="Start Demo" />
+            <DemoDeckOverview navigation={props.navigation}/>
         </View>
     )
 };

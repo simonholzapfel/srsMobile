@@ -6,7 +6,7 @@ import Colors from '../constants/Colors';
 
 const DemoNavigator = createStackNavigator({
     Screen: DemoScreen,
-    Demo: DemoDeck,
+    DemoDeck: DemoDeck
 },
 {
     defaultNavigationOptions: {

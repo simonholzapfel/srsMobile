@@ -5,7 +5,7 @@ import Image from 'react-native-scalable-image';
 const DeckPreview = props => {
     let finStyle = {...styles.View, ...props.style}
 
-    //get ideal aspect ration, if only one size value is given
+    //get ideal aspect ratio, if only one size value is given
     if(!finStyle.width){
         finStyle.width = finStyle.height*0.6;
     }
@@ -20,14 +20,6 @@ const DeckPreview = props => {
             </View>
         </TouchableOpacity>
     );
-
-    /*return (
-        <TouchableOpacity onPress={props.onPress}>
-            <View style={finStyle}>
-                <Text>Id is {props.id}</Text>
-            </View>
-        </TouchableOpacity>
-    );*/
 }
 
 const styles = StyleSheet.create({

@@ -7,7 +7,7 @@ import DemoDeckOverview from './DemoDeckOverview';
 const DemoScreen = props => {
     return (
         <View style={{ ...styles.root, ...props.style }}>
-            <DemoDeckOverview navigation={props.navigation}/>
+            <DemoDeckOverview navigation={props.navigation} style={styles.overview}/>
         </View>
     )
 };
@@ -15,7 +15,10 @@ const DemoScreen = props => {
 const styles = StyleSheet.create({
     root: {
         flex: 1,
-    }
+    },
+    overview: {
+        flex: 1
+    },  
 });
 
 export default DemoScreen;

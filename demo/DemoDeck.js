@@ -13,7 +13,7 @@ const DemoDeck = props => {
 }
 
 const cardHandler = res => {
-    console.log(res);
+    console.log("Finished card with ", res);
 };
 
 const styles = StyleSheet.create({

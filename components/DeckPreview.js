@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import Image from 'react-native-scalable-image';
+import Colors from '../constants/Colors';
 
 const DeckPreview = props => {
     let finStyle = {...styles.View, ...props.style}
@@ -24,7 +25,7 @@ const DeckPreview = props => {
 
 const styles = StyleSheet.create({
     View:{
-        backgroundColor: 'gray',
+        backgroundColor: Colors.dark,
         borderColor: 'black',
         borderRadius: 15,
         alignItems:"center",

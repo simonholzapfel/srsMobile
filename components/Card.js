@@ -2,28 +2,28 @@ import React, { useState } from 'react';
 import { StyleSheet, Button, FlatList, View, Text, Dimensions } from 'react-native';
 import Image from 'react-native-scalable-image';
 
-const Card = props => {
-    const [data, setData] = useState(props.data.front);
+const Card = ({ data, cardHandler }) => {
+    const [pageData, setPageData] = useState(data.front);
     const [flipped, setFlipped] = useState(false);
 
     const Front = () => (
         <Button title="Flip" style={styles.button} onPress={() => {
-            setData(props.data.back);
+            setPageData(data.back);
             setFlipped(true);
         }} />);
     const Back = () => (
         <View style={styles.backButtons}>
-            <Button title="Bad" color='red' style={styles.button} onPress={() => props.deckHandler(0)}/>
-            <Button title="Okay" color="orange" style={styles.button} onPress={() => props.deckHandler(1)}/>
-            <Button title="Good" color="yellow" style={styles.button} onPress={() => props.deckHandler(2)}/>
-            <Button title="Great" color="green" style={styles.button} onPress={() => props.deckHandler(3)}/>
+            <Button title="Bad" color='red' style={styles.button} onPress={() => cardHandler(0)} />
+            <Button title="Okay" color="orange" style={styles.button} onPress={() => cardHandler(1)} />
+            <Button title="Good" color="yellow" style={styles.button} onPress={() => cardHandler(2)} />
+            <Button title="Great" color="green" style={styles.button} onPress={() => cardHandler(3)} />
         </View>);
     const Buttons = flipped ? Back : Front;
 
     return (
         <View style={{ ...styles.root }}>
-            <FlatList data={data}
-                keyExtractor={item => "" + data.indexOf(item)}
+            <FlatList data={pageData}
+                keyExtractor={item => "" + pageData.indexOf(item)}
                 renderItem={renderItem} />
             <Buttons />
         </View>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     button: {
-        
+
     },
     text: {
 
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     image: {
         resizeMode: "contain",
     },
-    backButtons:{
+    backButtons: {
         flexDirection: "row",
         justifyContent: "space-evenly",
         width: "100%",

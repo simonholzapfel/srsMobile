@@ -10,6 +10,8 @@ const DemoScreen = props => {
             <DemoDeckOverview navigation={props.navigation} style={styles.overview}/>
         </View>
     )
+
+    //<Card data={demoDecks[0].cards[0]} deckHandler={console.log}/>
 };
 
 const styles = StyleSheet.create({

@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     item: {
         width: Dimensions.get('window').width / 4.5,
         margin: Dimensions.get('window').width / 100,
-    }
+    },
 });
 
 export default DeckOverview;

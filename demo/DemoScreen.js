@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, Button, } from 'react-native';
-import Card from '../components/Card'
-import { demoDecks } from '../data/dummy';
+import React, {
+    useEffect
+} from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Button,
+} from 'react-native';
 import DemoDeckOverview from './DemoDeckOverview';
 
 const DemoScreen = props => {

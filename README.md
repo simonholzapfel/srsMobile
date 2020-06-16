@@ -5,4 +5,4 @@
     yarn
 
 # Start
-See npm scripts
+npm start

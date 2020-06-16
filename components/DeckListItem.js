@@ -1,5 +1,5 @@
-import React, {} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import React, { } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 const DeckListItem = props => {
     return <TouchableOpacity style={styles.root} onPress={props.onPress}>

@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    TouchableOpacity,
+} from 'react-native';
 import Image from 'react-native-scalable-image';
 import Colors from '../constants/Colors';
 
 const DeckPreview = props => {
-    let finStyle = { ...styles.View, ...props.style }
+    const finStyle = { ...styles.View, ...props.style }
 
     //get ideal aspect ratio, if only one size value is given
     if (!finStyle.width) {
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderRadius: 15,
         alignItems: "center",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
     },
     image: {
 

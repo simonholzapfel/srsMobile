@@ -1,13 +1,13 @@
-import React, {} from 'react';
-import {TouchableOpacity, StyleSheet, View} from 'react-native';
-import {Audio} from 'expo-av';
-import {MaterialIcons} from '@expo/vector-icons';
+import React, { } from 'react';
+import { TouchableOpacity, StyleSheet, View } from 'react-native';
+import { Audio } from 'expo-av';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const AudioPlayer = props => {
     const player = new SilentPlayer(props.file);
 
     return (
-        <View style={{...styles.root, ...{backgroundColor: props.color}}}>
+        <View style={{ ...styles.root, ...{ backgroundColor: props.color } }}>
             <TouchableOpacity onPress={player.playPauseHandler}>
 
             </TouchableOpacity>
@@ -17,29 +17,29 @@ const AudioPlayer = props => {
 
 export default AudioPlayer;
 
-export class SilentPlayer{
-    constructor(file){
+export class SilentPlayer {
+    constructor(file) {
         this.file = file;
         this.sound = new Audio.Sound();
         this.state = false;
     }
 
-    async play(){
+    async play() {
         await this.sound.loadAsync(this.file);
         await this.sound.playAsync();
         this.state = true;
     }
 
-    stop(){
+    stop() {
         this.sound.stopAsync();
         this.state = false;
     }
 
-    playPauseHandler(){
-        if(this.state){
+    playPauseHandler() {
+        if (this.state) {
             this.stop();
         }
-        else{
+        else {
             this.play();
         }
     }

@@ -13,10 +13,10 @@ const Card = ({ data, cardHandler, progress, id }) => {
         }} />);
     const Back = () => (
         <View style={styles.backButtons}>
-            <Button title="Bad" color='red' style={styles.button} onPress={() => {setFlipped(false); cardHandler({score: 0, deckId: id});}} />
-            <Button title="Okay" color="orange" style={styles.button} onPress={() => {setFlipped(false); cardHandler({score: 1, deckId: id});}} />
-            <Button title="Good" color="yellow" style={styles.button} onPress={() => {setFlipped(false); cardHandler({score: 2, deckId: id});}} />
-            <Button title="Great" color="green" style={styles.button} onPress={() => {setFlipped(false); cardHandler({score: 3, deckId: id});}} />
+            <Button title="Bad" color='red' style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 0, deckId: id }); }} />
+            <Button title="Okay" color="orange" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 1, deckId: id }); }} />
+            <Button title="Good" color="yellow" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 2, deckId: id }); }} />
+            <Button title="Great" color="green" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 3, deckId: id }); }} />
         </View>);
     const Buttons = flipped ? Back : Front;
 
@@ -28,7 +28,8 @@ const Card = ({ data, cardHandler, progress, id }) => {
     return (
         <View style={{ ...styles.root }}>
             <View style={{ ...styles.progressStyle, ...progressStyle }} />
-            <FlatList data={flipped ? data.back : data.front}
+            <FlatList style={styles.list}
+                data={flipped ? data.back : data.front}
                 keyExtractor={item => "" + (flipped ? data.back : data.front).indexOf(item)}
                 renderItem={renderItem} />
             <Buttons />
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
 
     },
     text: {
-
+        textAlign: "center",
+        fontSize: 16,
     },
     image: {
         resizeMode: "contain",
@@ -72,7 +74,10 @@ const styles = StyleSheet.create({
     progressStyle: {
         backgroundColor: Colors.primary,
         height: '1%',
-    }
+    },
+    list: {
+
+    },
 });
 
 export default Card;

@@ -1,7 +1,7 @@
-import React, {  } from 'react';
-import {  } from 'react-native';
+import React, { } from 'react';
+import { } from 'react-native';
 import { enableScreens } from 'react-native-screens';
-import { createStore, combineReducers, applyMiddleware} from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
@@ -23,9 +23,9 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const App = () => {
   console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------");
-  
+
   return <DemoNavigator />
-  return <Provider store={store}><MainNavigator/></Provider>;
+  return <Provider store={store}><MainNavigator /></Provider>;
 }
 
 export default App;

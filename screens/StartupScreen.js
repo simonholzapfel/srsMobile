@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {View, ActivityIndicator, AsyncStorage} from 'react-native';
+import React, { useEffect } from 'react';
+import { View, ActivityIndicator, AsyncStorage } from 'react-native';
 import { useDispatch } from 'react-redux';
 
 import Colors from '../constants/Colors';
@@ -13,20 +13,20 @@ const StartupScreen = props => {
         const startupTask = async () => {
             const introDone = await AsyncStorage.getItem("introDone");
 
-            if(!introDone){
+            if (!introDone) {
                 props.navigation.navigate('Intro');
                 return;
             }
 
             const authRaw = await AsyncStorage.getItem("userData");
 
-            if(!authRaw){
+            if (!authRaw) {
                 props.navigation.navigate('Login');
                 return;
             }
             const localData = JSON.parse(authRaw);
 
-            const response = await fetch(Backend+"/v1/user/me", {
+            const response = await fetch(Backend + "/v1/user/me", {
                 method: 'GET',
                 headers: {
                     "Authorization": "Bearer " + localData.token
@@ -34,7 +34,7 @@ const StartupScreen = props => {
             });
             const data = await response.json();
 
-            if(response.ok){
+            if (response.ok) {
                 props.navigation.navigate('Srs');
                 dispatch(authActions.authenticate(localData.token, data.user.username, data.user.discriminator, localData.email))
                 return;
@@ -47,9 +47,9 @@ const StartupScreen = props => {
     }, [])
 
     return (
-    <View>
-        <ActivityIndicator color={Colors.primary}/>
-    </View>);
+        <View>
+            <ActivityIndicator color={Colors.primary} />
+        </View>);
 }
 
 export default StartupScreen;

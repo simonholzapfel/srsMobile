@@ -17,17 +17,17 @@ const DemoDeck = props => {
     const cardHandler = ({ score, deckId }) => {
         if (index < length) {
             setIndex(index + 1);
-            scores.push({deckId, score});
+            scores.push({ deckId, score });
         }
     }
 
-    if(index == length){
-        return <DeckFinished onClose={() => props.navigation.pop()} deck={deck}/>;
+    if (index == length) {
+        return <DeckFinished onClose={() => props.navigation.pop()} deck={deck} />;
     }
 
     return (
         <View style={{ ...styles.view, ...props.style }}>
-            <Card cardHandler={cardHandler} data={deck.cards[index]} style={styles.card} progress={index / length} id={index}/>
+            <Card cardHandler={cardHandler} data={deck.cards[index]} style={styles.card} progress={index / length} id={index} />
         </View>);
 }
 

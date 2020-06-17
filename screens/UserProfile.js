@@ -1,7 +1,7 @@
-import React, {} from 'react';
-import { StyleSheet, Text, View, Platform} from 'react-native';
+import React, { } from 'react';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import HeaderButton from '../components/HeaderButton';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import Colors from '../constants/Colors';
 import { ReactReduxContext, useSelector } from 'react-redux';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -9,27 +9,27 @@ import ScrollableTabView from 'react-native-scrollable-tab-view';
 //if no uid in nav params => my profile
 const UserProfile = props => {
     let user = props.navigation.getParam('user');
-    if(!user){
+    if (!user) {
         user = useSelector(state => state.users.me);
     }
 
-    return(
+    return (
         <View style={styles.view}>
             <ScrollableTabView style={styles.tabView} tabBarUnderlineStyle={styles.tabViewUnderline} tabBarTextStyle={styles.tabViewText}>
-                <FollowingUsers tabLabel="Following Users"/>
-                <MyDecks tabLabel="My Decks"/>
-                <FollowingDecks tabLabel="Following Decks"/>
+                <FollowingUsers tabLabel="Following Users" />
+                <MyDecks tabLabel="My Decks" />
+                <FollowingDecks tabLabel="Following Decks" />
             </ScrollableTabView>
         </View>
     );
 }
 
-UserProfile.navigationOptions =  ({navigation}) => ({
+UserProfile.navigationOptions = ({ navigation }) => ({
     headerRight: () => {
-        if(navigation.getParam('user') == undefined){
-            return( 
+        if (navigation.getParam('user') == undefined) {
+            return (
                 <HeaderButtons HeaderButtonComponent={HeaderButton}>
-                    <Item 
+                    <Item
                         title="Search"
                         iconName="md-settings"
                         onPress={() => {
@@ -43,7 +43,7 @@ UserProfile.navigationOptions =  ({navigation}) => ({
     },
     headerTitle: () => {
         const user = navigation.getParam('user');
-        if(!user){ //fallback, me
+        if (!user) { //fallback, me
             return (
                 <View>
                     <ReactReduxContext.Consumer>
@@ -57,8 +57,8 @@ UserProfile.navigationOptions =  ({navigation}) => ({
                 </View>
             );
         }
-        else{
-            return (<UserTitleComponent user={user}/>);
+        else {
+            return (<UserTitleComponent user={user} />);
         }
     }
 });
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     unameText: {
-        fontSize: 20, 
+        fontSize: 20,
         color: Platform.OS === 'ios' ? Colors.primary : 'white',
     },
     discriminatorText: {
@@ -116,10 +116,10 @@ const styles = StyleSheet.create({
     tabView: {
         flex: 1,
     },
-    tabViewText:{
-        color: Platform.OS === 'ios' ?  Colors.primary : Colors.dark
+    tabViewText: {
+        color: Platform.OS === 'ios' ? Colors.primary : Colors.dark
     },
-    tabViewUnderline:{
+    tabViewUnderline: {
         backgroundColor: Colors.primary
     }
 });

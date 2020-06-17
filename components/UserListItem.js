@@ -1,5 +1,5 @@
-import React, {} from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import React, { } from 'react';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const UserListItem = props => {
     return <TouchableOpacity style={styles.root} onPress={props.onPress}>

@@ -1,7 +1,7 @@
 import React, {
 
 } from 'react';
-import { 
+import {
     View,
     StyleSheet,
     Text,
@@ -10,14 +10,14 @@ import {
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 
-const DeckFinished = ({onClose, deck, }) => {
+const DeckFinished = ({ onClose, deck, }) => {
     return <View style={styles.root}>
         <View style={styles.topField}>
-            <Image source={deck.thumbnail} width={Dimensions.get("window").width}/>
+            <Image source={deck.thumbnail} width={Dimensions.get("window").width} />
             <Text>You finished {deck.name}!</Text>
         </View>
-        
-        <Button title="Close" onPress={onClose} color="red"/>
+
+        <Button title="Close" onPress={onClose} color="red" />
     </View>;
 }
 

@@ -7,16 +7,20 @@ const Card = ({ data, cardHandler, progress, id }) => {
     const [flipped, setFlipped] = useState(false);
 
     //Buttons
+    const onPress = score => {
+        setFlipped(false);
+        cardHandler({score: score, deckId: id});
+    }
     const Front = () => (
         <Button title="Flip" style={styles.button} onPress={() => {
             setFlipped(true);
         }} />);
     const Back = () => (
         <View style={styles.backButtons}>
-            <Button title="Bad" color='red' style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 0, deckId: id }); }} />
-            <Button title="Okay" color="orange" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 1, deckId: id }); }} />
-            <Button title="Good" color="yellow" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 2, deckId: id }); }} />
-            <Button title="Great" color="green" style={styles.button} onPress={() => { setFlipped(false); cardHandler({ score: 3, deckId: id }); }} />
+            <Button title="Bad" color='red' style={styles.button} onPress={() => onPress(0)} />
+            <Button title="Okay" color="orange" style={styles.button} onPress={() => onPress(1)} />
+            <Button title="Good" color="yellow" style={styles.button} onPress={() => onPress(2)} />
+            <Button title="Great" color="green" style={styles.button} onPress={() => onPress(3)} />
         </View>);
     const Buttons = flipped ? Back : Front;
 

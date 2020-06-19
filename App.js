@@ -24,7 +24,7 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 const App = () => {
   console.log("-----------------------------------------------------------------------------------------------------------------------------------------------------");
 
-  return <DemoNavigator />
+  return <DemoNavigator /> // remove this to change to release
   return <Provider store={store}><MainNavigator /></Provider>;
 }
 

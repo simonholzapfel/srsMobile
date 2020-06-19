@@ -22,7 +22,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "srs"
     },
     "android": {
       "package": "com.srs.srs",
